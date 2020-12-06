@@ -5,6 +5,11 @@ if (!file.exists('data/global-latest-data.csv')) {
 
 covid_data = read.csv('data/global-latest-data.csv')
 
-# covid_data
-covid_data[which.max(covid_data['totale_positivi'][,1]),]
+covid_data['positivi/tamponi'] = covid_data['totale_positivi'] / covid_data['tamponi']
+write.csv(covid_data, 'data/global-latest-data-with-proportions.csv')
 
+dates = as.Date(covid_data['data'][,1])
+percentages = covid_data['positivi/tamponi'][,1]
+to_plot = data.frame(dates, percentages)
+
+plot(to_plot, '', 'positive / tests')
