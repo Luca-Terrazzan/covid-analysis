@@ -4,4 +4,3 @@ if (!file.exists('data/global-latest-data.csv')) {
 }
 
 covid_data = read.csv('data/global-latest-data.csv')
-covid_data
