@@ -4,3 +4,7 @@ if (!file.exists('data/global-latest-data.csv')) {
 }
 
 covid_data = read.csv('data/global-latest-data.csv')
+
+# covid_data
+covid_data[which.max(covid_data['totale_positivi'][,1]),]
+
