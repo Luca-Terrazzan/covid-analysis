@@ -10,6 +10,7 @@ write.csv(covid_data, 'data/global-latest-data-with-proportions.csv')
 
 dates = as.Date(covid_data['data'][,1])
 percentages = covid_data['positivi/tamponi'][,1]
-to_plot = data.frame(dates, percentages)
+positives = covid_data['totale_positivi'][,1]
 
-plot(to_plot, '', 'positive / tests')
+plot(data.frame(dates, percentages), '', 'positives / tests', type='l', col='red')
+plot(data.frame(dates, positives), '', 'total positives', type='l', col='yellow')
