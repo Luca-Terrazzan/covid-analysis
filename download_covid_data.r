@@ -7,7 +7,7 @@ if (!file.exists('data/global-latest-data.csv')) {
 }
 covid_data = read.csv('data/global-latest-data.csv')
 
-# Enrich data with new informations
+# Enrich data with new information
 covid_data = shift.column(data=covid_data, columns="tamponi", newNames='nuovi_tamponi', up=FALSE)
 covid_data['nuovi_tamponi'] = covid_data['tamponi'] - covid_data['nuovi_tamponi']
 covid_data['positivi/tamponi'] = covid_data['nuovi_positivi'] / covid_data['nuovi_tamponi']
