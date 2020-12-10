@@ -18,6 +18,7 @@ write.csv(covid_data, 'data/global-latest-data-with-proportions.csv')
 # Parse date column
 dates = as.Date(covid_data['data'][,1])
 
+# Plot
 plot(data.frame(dates, covid_data['positivi/tamponi'][,1]), '', 'positives / tests', type='l', col='red')
 plot(data.frame(dates, covid_data['totale_positivi'][,1]), '', 'total positives', type='l', col='purple')
 plot(data.frame(dates, covid_data['nuovi_positivi'][,1]), '', 'daily positives', type='l', col='black')
