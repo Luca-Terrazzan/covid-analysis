@@ -1,7 +1,6 @@
 import os.path
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.dates as pltdates
 
 GITHUB_CSV_URL = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv'
 LOCAL_CSV_PATH = 'data/global-latest-data.csv'
@@ -17,7 +16,6 @@ covid_data.set_index('data', inplace=True)
 # Enrich data with new information
 covid_data['nuovi_tamponi'] = covid_data['tamponi'] - covid_data['tamponi'].shift(1, fill_value=0)
 covid_data['positivi/tamponi'] = covid_data['nuovi_positivi'] / covid_data['nuovi_tamponi']
-
 
 # Save new dataset
 covid_data.to_csv(LOCAL_ANALYSIS_CSV_PATH)
