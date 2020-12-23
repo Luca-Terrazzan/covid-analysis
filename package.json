@@ -1,0 +1,23 @@
+{
+  "name": "analisi-covid",
+  "version": "1.0.0",
+  "description": "A simple set of data analysis scripts",
+  "scripts": {
+    "start": "Rscript download_covid_data.r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luca-Terrazzan/analisi-covid.git"
+  },
+  "keywords": [
+    "covid",
+    "r",
+    "data"
+  ],
+  "author": "Luca Terrazzan <luca.terraz@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luca-Terrazzan/analisi-covid/issues"
+  },
+  "homepage": "https://github.com/Luca-Terrazzan/analisi-covid#readme"
+}
