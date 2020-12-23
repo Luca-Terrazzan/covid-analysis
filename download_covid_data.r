@@ -2,10 +2,16 @@
 
 library(useful)
 
-# Download latest data from github if needed
-if (!file.exists('data/global-latest-data.csv')) {
+
+force_download = is.element('--download', commandArgs(trailingOnly=TRUE))
+
+# Download latest data from github if needed or requested
+if (!file.exists('data/global-latest-data.csv') || force_download) {
+  print('Downloading most recent data from github...')
   raw_csv_from_github = read.csv('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv')
+  print('...Done! Saving to CSV...')
   write.csv(raw_csv_from_github, 'data/global-latest-data.csv')
+  print('...Done!')
 }
 covid_data = read.csv('data/global-latest-data.csv')
 
