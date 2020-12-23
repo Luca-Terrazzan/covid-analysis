@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 library(useful)
 
 # Download latest data from github if needed
