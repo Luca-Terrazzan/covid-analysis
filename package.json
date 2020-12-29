@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple set of covid data analysis scripts",
   "scripts": {
-    "start": "Rscript download_covid_data.r"
+    "start": "Rscript download_covid_data.r --download"
   },
   "repository": {
     "type": "git",
