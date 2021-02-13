@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A simple set of covid data analysis scripts",
   "scripts": {
-    "start": "Rscript download_covid_data.r --download"
+    "start": "Rscript download_covid_data.r --download",
+    "start-and-upload": "npm run start && git add . && git commit -m \"automatic data update\""
   },
   "repository": {
     "type": "git",
