@@ -7,6 +7,7 @@ GITHUB_CSV_URL = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati
 LOCAL_CSV_PATH = 'data/global-latest-data.csv'
 LOCAL_ANALYSIS_CSV_PATH = 'data/global-latest-data-with-proportions.csv'
 
+
 @click.command()
 @click.option('--download/--', default=False, show_default=True)
 def main(download):
@@ -21,13 +22,13 @@ def main(download):
 
     # Enrich data with new information
     covid_data['nuovi_tamponi'] = covid_data['tamponi'] - covid_data['tamponi'].shift(1, fill_value=0)
-    covid_data['positivi/tamponi'] = covid_data['nuovi_positivi'] / covid_data['nuovi_tamponi']
+    covid_data['positivi/tamponi'] = covid_data['nuovi_positivi'] / covid_data['nuovi_tamponi'].clip(0, None)
 
     # Save new dataset
     covid_data.to_csv(LOCAL_ANALYSIS_CSV_PATH)
 
     # Plot
-    fix, axs = plt.subplots(5, figsize=(10,20))
+    _, axs = plt.subplots(5, figsize=(10, 20))
     axs[0].plot(covid_data['positivi/tamponi'])
     axs[0].set_title('positives / tests')
     axs[1].plot(covid_data['totale_positivi'])
