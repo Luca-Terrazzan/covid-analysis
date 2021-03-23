@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple set of covid data analysis scripts",
   "scripts": {
-    "start": "python3 download_covid_data.py --download",
+    "start": "python download_covid_data.py --download",
     "start-and-upload": "npm run start && git add . && git commit -m \"automatic data update\" && git push"
   },
   "repository": {
