@@ -29,4 +29,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Download fresh data and update repository
-        run: npm run start-and-upload
+        run: |
+          git config --local user.name "Robot 🤖"
+          git config --local user.email "luca.terraz@gmail.com"
+          npm run start-and-upload
