@@ -4,9 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 GITHUB_CSV_URL = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv'
-LOCAL_CSV_PATH = 'data/global-latest-data.csv'
+LOCAL_CSV_PATH = 'data/raw/covid_data_from_protezione_civile_github.csv'
 LOCAL_ANALYSIS_CSV_PATH = 'data/global-latest-data-with-proportions.csv'
-
 
 @click.command()
 @click.option('--download/--', default=False, show_default=True)
