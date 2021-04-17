@@ -1,1 +1,2 @@
-!data/.gitkeep
+.vscode
+**/__pycache__
