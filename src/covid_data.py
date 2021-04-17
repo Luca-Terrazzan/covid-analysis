@@ -2,13 +2,11 @@ import os.path
 import pandas as pd
 
 GITHUB_CSV_URL = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale.csv'
-LOCAL_CSV_PATH = '../data/raw/covid_data_from_protezione_civile_github.csv'
+LOCAL_CSV_PATH = './data/raw/covid_data_from_protezione_civile_github.csv'
 LOCAL_ANALYSIS_CSV_PATH = '../data/covid_data.csv'
 
-def download(download):
-    print('Downloading fresh data from github...')
+def download():
     pd.read_csv(GITHUB_CSV_URL, index_col='data').to_csv(LOCAL_CSV_PATH)
-    print('...Done!')
 
 def enrich():
     covid_data = pd.read_csv(LOCAL_CSV_PATH)
